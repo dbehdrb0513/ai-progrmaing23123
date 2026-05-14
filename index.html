@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이모지 테스트 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+        #emoji-container {
+            font-size: 10rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s;
+        }
+        #emoji-container:active {
+            transform: scale(0.9);
+        }
+        .instruction {
+            position: absolute;
+            top: 20%;
+            font-size: 1.5rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction">이모지를 클릭해보세요!</div>
+    <div id="emoji-container" onclick="toggleEmoji()">😊</div>
+
+    <script>
+        function toggleEmoji() {
+            const emojiDiv = document.getElementById('emoji-container');
+            if (emojiDiv.innerText === '😊') {
+                emojiDiv.innerText = '😠';
+            } else {
+                emojiDiv.innerText = '😊';
+            }
+        }
+    </script>
+</body>
+</html>
